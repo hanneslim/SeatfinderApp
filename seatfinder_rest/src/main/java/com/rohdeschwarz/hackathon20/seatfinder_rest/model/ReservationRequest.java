@@ -1,10 +1,10 @@
 package com.rohdeschwarz.hackathon20.seatfinder_rest.model;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class ReservationRequest {
   public int resource;
   public int user;
-  public Date from;
-  public Date to;
+  public Timestamp from;
+  public Timestamp to;
 }

@@ -6,6 +6,7 @@ public class Resource {
   public String name;
   public Coordinates coordinates;
   public Shape shape;
+  public boolean reservable;
 
   public Resource() {
   }
@@ -15,5 +16,6 @@ public class Resource {
     this.name = name;
     this.coordinates = coordinates;
     this.shape = shape;
+    this.reservable = true;
   }
 }
