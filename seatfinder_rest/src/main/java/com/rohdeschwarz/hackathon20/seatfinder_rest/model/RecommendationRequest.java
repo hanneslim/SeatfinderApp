@@ -4,15 +4,15 @@ import java.util.Date;
 import java.util.List;
 
 public class RecommendationRequest {
-  public User user;
+  public int user;
   public Date from;
   public Date to;
-  public List<Criterion> whishlist;
+  public List<CriterionRequest> whishlist;
 
   public RecommendationRequest() {
   }
 
-  public RecommendationRequest(User user, Date from, Date to, List<Criterion> whishlist) {
+  public RecommendationRequest(int user, Date from, Date to, List<CriterionRequest> whishlist) {
     this.user = user;
     this.from = from;
     this.to = to;

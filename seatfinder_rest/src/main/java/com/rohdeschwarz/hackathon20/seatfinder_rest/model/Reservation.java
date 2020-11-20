@@ -1,12 +1,12 @@
 package com.rohdeschwarz.hackathon20.seatfinder_rest.model;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIdentityReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.*;
 
 import java.util.Date;
 
 public class Reservation implements Comparable<Reservation> {
+
+  public int id;
 
   @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
   @JsonIdentityReference(alwaysAsId = true)
@@ -22,7 +22,8 @@ public class Reservation implements Comparable<Reservation> {
   public Reservation() {
   }
 
-  public Reservation(Resource resource, User user, Date from, Date to) {
+  public Reservation(int id, Resource resource, User user, Date from, Date to) {
+    this.id = id;
     this.resource = resource;
     this.user = user;
     this.from = from;
