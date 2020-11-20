@@ -7,4 +7,14 @@ public class Space {
   public String name;
   public Shape shape;
   public List<Resource> resources;
+
+  public Space() {
+  }
+
+  public Space(int id, String name, Shape shape, List<Resource> resources) {
+    this.id = id;
+    this.name = name;
+    this.shape = shape;
+    this.resources = resources;
+  }
 }
