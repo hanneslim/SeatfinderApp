@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 @RestController
@@ -13,7 +14,7 @@ public class ReservationController {
   @GetMapping("/reservation/{id}")
   public Reservation getReservation(@PathVariable(value="id") String id) {
     return new Reservation(new Resource(Integer.parseInt(id), "Arbeitsplatz "+id, new Coordinates(),
-      new Shape()), new User(), new Date(), new Date());
+      new Shape()), new User(), new Timestamp(0), new Timestamp(0));
   }
 
   @PostMapping("/reservation")

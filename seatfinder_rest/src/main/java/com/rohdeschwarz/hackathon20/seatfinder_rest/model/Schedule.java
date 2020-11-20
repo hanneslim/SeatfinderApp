@@ -6,6 +6,7 @@ public class Schedule {
   public TreeSet<Reservation> reservations;
 
   public Schedule() {
+    reservations = new TreeSet<>();
   }
 
   public Schedule(TreeSet<Reservation> reservations) {

@@ -1,18 +1,18 @@
 package com.rohdeschwarz.hackathon20.seatfinder_rest.model;
 
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 public class RecommendationRequest {
   public User user;
-  public Date from;
-  public Date to;
+  public Timestamp from;
+  public Timestamp to;
   public List<Criterion> whishlist;
 
   public RecommendationRequest() {
   }
 
-  public RecommendationRequest(User user, Date from, Date to, List<Criterion> whishlist) {
+  public RecommendationRequest(User user, Timestamp from, Timestamp to, List<Criterion> whishlist) {
     this.user = user;
     this.from = from;
     this.to = to;
