@@ -2,7 +2,7 @@ package com.rohdeschwarz.hackathon20.seatfinder_rest;
 
 import com.rohdeschwarz.hackathon20.seatfinder_rest.database.Mapper;
 import com.rohdeschwarz.hackathon20.seatfinder_rest.database.Scheduler;
-import com.rohdeschwarz.hackathon20.seatfinder_rest.model.Reservation;
+import com.rohdeschwarz.hackathon20.seatfinder_rest.model.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -17,14 +17,14 @@ public class SeatfinderDatabaseTest {
   private Reservation setupSingleReservation() {
     Timestamp from = new Timestamp( 2020, 11, 20, 19,0,0,0);
     Timestamp to = new Timestamp( 2020, 11,20, 20,0,0,0);
-    Reservation r = new Reservation( "me", "desk", from , to );
+    Reservation r = new Reservation(1, new Resource(1, "desk", new Coordinates(), new Shape()), new User(1,"me", "myteam"), from , to );
     return r;
   }
 
   private Reservation setupAnotherReservation() {
     Timestamp from = new Timestamp( 2020, 11, 20, 20,0,0,0);
     Timestamp to = new Timestamp( 2020, 11,20, 21,0,0,0);
-    Reservation r = new Reservation( "me", "desk", from , to );
+    Reservation r = new Reservation(1, new Resource(2, "anotherdesk", new Coordinates(), new Shape()), new User(2,"you", "yourteam"), from , to );
     return r;
   }
 

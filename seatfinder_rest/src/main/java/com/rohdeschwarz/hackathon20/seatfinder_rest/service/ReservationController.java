@@ -6,20 +6,25 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
-import java.util.Date;
 
 @RestController
 public class ReservationController {
 
   @GetMapping("/reservation/{id}")
+  @CrossOrigin
   public Reservation getReservation(@PathVariable(value="id") String id) {
-    return new Reservation(new Resource(Integer.parseInt(id), "Arbeitsplatz "+id, new Coordinates(),
+    return new Reservation(Integer.parseInt(id), new Resource(Integer.parseInt(id), "Arbeitsplatz "+id, new Coordinates(),
       new Shape()), new User(), new Timestamp(0), new Timestamp(0));
   }
 
   @PostMapping("/reservation")
-  public ResponseEntity<String> postReservation(@RequestBody Reservation reservation){
-    return new ResponseEntity<>(HttpStatus.OK);
+  @CrossOrigin
+  public Reservation postReservation(@RequestBody ReservationRequest reservationRequest){
+    return new Reservation(42,
+      new Resource(reservationRequest.resource, "mockresource", new Coordinates(0.01, 0.02, 3.0), new Shape("svg here")),
+      new User(1, "mockuser", "mockteam"),
+      reservationRequest.from,
+      reservationRequest.to);
   }
 
 }
