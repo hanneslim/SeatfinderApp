@@ -10,4 +10,15 @@ public class Criterion {
   public enum Type{
     BOOL,LIST,STRING,INT
   }
+
+  public Criterion() {
+  }
+
+  public Criterion(int id, String name, int priority, Type type, String value) {
+    this.id = id;
+    this.name = name;
+    this.priority = priority;
+    this.type = type;
+    this.value = value;
+  }
 }

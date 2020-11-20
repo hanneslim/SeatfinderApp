@@ -1,8 +1,14 @@
 package com.rohdeschwarz.hackathon20.seatfinder_rest.model;
 
-import java.util.List;
+import java.util.TreeSet;
 
 public class Schedule {
-  // TODO sorted list (timestamps)
-  public List<Reservation> reservations;
+  public TreeSet<Reservation> reservations;
+
+  public Schedule() {
+  }
+
+  public Schedule(TreeSet<Reservation> reservations) {
+    this.reservations = reservations;
+  }
 }
