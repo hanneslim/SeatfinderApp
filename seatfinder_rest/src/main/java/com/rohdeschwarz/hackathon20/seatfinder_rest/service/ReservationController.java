@@ -11,12 +11,14 @@ import java.sql.Timestamp;
 public class ReservationController {
 
   @GetMapping("/reservation/{id}")
+  @CrossOrigin
   public Reservation getReservation(@PathVariable(value="id") String id) {
     return new Reservation(Integer.parseInt(id), new Resource(Integer.parseInt(id), "Arbeitsplatz "+id, new Coordinates(),
       new Shape()), new User(), new Timestamp(0), new Timestamp(0));
   }
 
   @PostMapping("/reservation")
+  @CrossOrigin
   public Reservation postReservation(@RequestBody ReservationRequest reservationRequest){
     return new Reservation(42,
       new Resource(reservationRequest.resource, "mockresource", new Coordinates(0.01, 0.02, 3.0), new Shape("svg here")),
