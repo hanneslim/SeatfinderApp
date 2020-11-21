@@ -22,7 +22,7 @@ public class Reservation implements Comparable<Reservation> {
   public Reservation(String usr, String res, Timestamp from, Timestamp to) {
     this.resource = new Resource(0, res, new Coordinates(), new Shape());
 
-    this.user = new User(0, usr);
+    this.user = new User(0, usr, "Krokodil" );
 
     this.from = from;
     this.to = to;
