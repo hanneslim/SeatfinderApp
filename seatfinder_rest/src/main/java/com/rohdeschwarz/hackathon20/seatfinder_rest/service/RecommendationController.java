@@ -1,6 +1,7 @@
 package com.rohdeschwarz.hackathon20.seatfinder_rest.service;
 
 import com.rohdeschwarz.hackathon20.seatfinder_rest.model.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,7 @@ import java.util.Arrays;
 public class RecommendationController {
 
   @PostMapping("/recommendation")
+  @CrossOrigin
   public Recommendation postRecommendation(@RequestBody RecommendationRequest recommendationRequest) {
     return new Recommendation(Arrays.asList(
       new WeightedOption(

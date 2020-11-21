@@ -10,6 +10,7 @@ public class Space {
   public int id;
   public String name;
   public Shape shape;
+
   @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
   @JsonIdentityReference(alwaysAsId = true)
   public List<Resource> resources;
