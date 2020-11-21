@@ -9,7 +9,7 @@ class GraphTest {
 
   @Test
   public void initTest(){
-    Graph graph = new Graph();
+    Graph graph = Graph.getInstance();
     graph.generateGraph();
     assertEquals(graph.shortestPath(0,0), 0);
     assertEquals(graph.shortestPath(0,1), 1);

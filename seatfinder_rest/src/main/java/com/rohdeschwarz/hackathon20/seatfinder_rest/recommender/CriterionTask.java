@@ -12,7 +12,7 @@ public abstract class CriterionTask {
   protected List<Resource> resources;
 
   public CriterionTask(List<Resource> resources){
-
+    this.resources = resources;
   }
 
   /**
