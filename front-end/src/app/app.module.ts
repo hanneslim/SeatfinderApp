@@ -10,8 +10,9 @@ import { PreferencesComponent } from './preferences/preferences.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule} from '@angular/material/slider';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatIconModule} from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -29,18 +30,21 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatSliderModule,
     MatExpansionModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   exports: [
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatSliderModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatButtonModule
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'de-DE'},MatDatepickerModule,
     MatNativeDateModule,
-    MatSliderModule ],
+    MatSliderModule,
+    MatButtonModule ],
   bootstrap: [AppComponent]
 })
 
