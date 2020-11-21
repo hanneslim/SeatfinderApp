@@ -20,15 +20,13 @@ public class SeatfinderDatabaseTest {
   private Reservation setupSingleReservation() {
     Timestamp from = new Timestamp( 2020, 11, 20, 19,0,0,0);
     Timestamp to = new Timestamp( 2020, 11,20, 20,0,0,0);
-    Reservation r = new Reservation(1, new Resource(1, "desk", new Coordinates(), new Shape()), new User(1,"me", "myteam"), from , to );
-    return r;
+    return new Reservation(1, new Resource(1, "desk", new Coordinates(), new Shape()), new User(1,"me", "myteam"), from , to );
   }
 
   private Reservation setupAnotherReservation() {
     Timestamp from = new Timestamp( 2020, 11, 20, 20,0,0,0);
     Timestamp to = new Timestamp( 2020, 11,20, 21,0,0,0);
-    Reservation r = new Reservation(1, new Resource(2, "anotherdesk", new Coordinates(), new Shape()), new User(2,"you", "yourteam"), from , to );
-    return r;
+    return new Reservation(1, new Resource(2, "anotherdesk", new Coordinates(), new Shape()), new User(2,"you", "yourteam"), from , to );
   }
 
   @Test
@@ -81,7 +79,8 @@ public class SeatfinderDatabaseTest {
   @Test
   void mapperSerializes() throws IOException {
     Mapper m = new Mapper("site.json");
-    assert( m.saveToDefaultFile() );
+    boolean result =  m.saveToDefaultFile();
+    assert( result );
   }
 
   @Test
@@ -97,7 +96,7 @@ public class SeatfinderDatabaseTest {
   void mapSerializes() {
     try {
       Mapper m = mapperFillMap("map.json");
-      System.out.println(m);
+      m.saveToDefaultFile();
     }
     catch (IOException e) {
       assert(false);
@@ -128,7 +127,22 @@ public class SeatfinderDatabaseTest {
     Space s2 = new Space(32, "Büro Personal", buero, new ArrayList<>(Arrays.asList(d1, d2, d3, d4, h1, dr)));
     Space ov = new Space(22, "Übersichtsplan", buero, new ArrayList<>(Arrays.asList(d1, d2, d3)));
     m.setSite("MyNiceMap", new ArrayList<>(Arrays.asList(ov) ), new Map(44, "Gebäude 1", new ArrayList<>(Arrays.asList(s1, s2)) ));
-    m.saveToDefaultFile();
+
     return m;
+  }
+
+  @Test
+  void findSpaceFromName()
+  {
+    try {
+      Mapper m = mapperFillMap("map.json");
+
+      Space s = m.getSpaceWithName("Büro Software");
+      assert(s != null);
+      assert(s.name.equals("Büro Software"));
+    }
+    catch (IOException e) {
+      assert(false);
+    }
   }
 }

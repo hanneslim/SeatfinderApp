@@ -57,6 +57,16 @@ public class Mapper {
     return siteName;
   }
 
+  public Space getSpaceWithName(String name ) {
+    for (int i = 0; i < map.spaces.size(); i++) {
+      if (map.spaces.get(i).name.equals(name)) {
+        return map.spaces.get(i);
+      }
+    }
+    return null;
+  }
+
+
   public void setSite(String name, ArrayList<Space> spaces, Map map ) {
     this.siteName = name;
     this.spaces = spaces;
