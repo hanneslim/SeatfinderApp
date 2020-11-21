@@ -10,6 +10,8 @@ import { PreferencesComponent } from './preferences/preferences.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule} from '@angular/material/slider';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,16 @@ import { SuggestionsComponent } from './suggestions/suggestions.component';
     MatDatepickerModule,
     MatNativeDateModule,
     BrowserAnimationsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatExpansionModule,
+    MatIconModule
   ],
   exports: [
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSliderModule
+    MatSliderModule,
+    MatExpansionModule
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'de-DE'},MatDatepickerModule,
     MatNativeDateModule,

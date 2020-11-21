@@ -19,6 +19,23 @@ import {
 
 
 export class PreferencesComponent implements OnInit {
+  
+  //Stepps für das Dropdown vor und zurück
+  step = 0;
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
+  }
+
+
   criteriaData: any[] = [];
   prio1Data: any[] = []; //Für Alle Json Elemente mit Prio 1
   prio2Data: any[] = []; //Für Alle Json Elemente mit Prio 2
