@@ -2,7 +2,6 @@ package com.rohdeschwarz.hackathon20.seatfinder_rest.handler;
 
 import com.rohdeschwarz.hackathon20.seatfinder_rest.database.Users;
 import com.rohdeschwarz.hackathon20.seatfinder_rest.model.User;
-import org.neo4j.exceptions.InvalidArgumentException;
 
 public class UserHandler {
   private Users users;
@@ -21,7 +20,7 @@ public class UserHandler {
   public User createNewUser( int id, String name, String team ) {
     User u = getUserById( id );
     if ( u != null )
-      throw new InvalidArgumentException( "User with ID " + id + " already exists");
+      throw new IllegalArgumentException( "User with ID " + id + " already exists");
 
     return users.addNewUser( id, name, team );
   }

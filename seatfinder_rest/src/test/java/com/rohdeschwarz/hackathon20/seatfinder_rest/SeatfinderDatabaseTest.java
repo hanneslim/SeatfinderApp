@@ -131,18 +131,12 @@ public class SeatfinderDatabaseTest {
   }
 
   @Test
-  void findSpaceFromName()
-  {
-    try {
-      Mapper m = mapperFillMap("map.json");
+  void findSpaceFromName() {
+    Mapper m = mapperFillMap("map.json");
 
-      Space s = m.getSpaceWithName("Büro Software");
-      assert(s != null);
-      assert(s.name.equals("Büro Software"));
-    }
-    catch (IOException e) {
-      assert(false);
-    }
+    Space s = m.getSpaceWithName("Büro Software");
+    assert (s != null);
+    assert (s.name.equals("Büro Software"));
   }
 
   @Test
