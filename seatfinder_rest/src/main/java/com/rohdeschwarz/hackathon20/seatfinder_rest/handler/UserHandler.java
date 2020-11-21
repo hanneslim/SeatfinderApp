@@ -6,6 +6,6 @@ public class UserHandler {
 
   public User getUserById(int id){
     // TODO implement
-    throw new RuntimeException("not implemented");
+    return new User(1, "leon", "leonsteam");
   }
 }

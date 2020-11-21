@@ -1,5 +1,7 @@
 package com.rohdeschwarz.hackathon20.seatfinder_rest.model;
 
+import java.util.Objects;
+
 public class Resource {
 
   public int id;
@@ -25,5 +27,22 @@ public class Resource {
     this.coordinates = coordinates;
     this.shape = shape;
     this.reservable = reservable;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    Resource resource = (Resource) o;
+    return id == resource.id &&
+      reservable == resource.reservable &&
+      Objects.equals(name, resource.name) &&
+      Objects.equals(coordinates, resource.coordinates) &&
+      Objects.equals(shape, resource.shape);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, name, coordinates, shape, reservable);
   }
 }
