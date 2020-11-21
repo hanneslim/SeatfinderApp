@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class SkylineAlgorithm {
 
- public static List<WeightedOption> skylineOf(Collection<Map<Resource,Integer>> rankingMatrix){
-   return null;
- }
+  public static List<WeightedOption> skylineOf(Collection<Map<Resource,Integer>> rankingMatrix){
+    return null;
+  }
 }
