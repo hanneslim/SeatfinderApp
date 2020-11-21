@@ -17,8 +17,8 @@ public class CriteriaController {
   public Criteria getCriteria() {
     List<Criterion> cl = Arrays.asList(
       new Criterion(1, "Near to Radiator", 3, Criterion.Type.BOOL, "true"),
-      new Criterion(2, "Near to Team", 3, Criterion.Type.LIST, "[\"Giraffe\", \"Elefant\", \"Schildkröte\"]"),
-      new Criterion(3, "Maximum of direct Neighbors", 3, Criterion.Type.INT, "1"));
+      new Criterion(2, "Near to Team", 2, Criterion.Type.LIST, "[\"Giraffe\", \"Elefant\", \"Schildkröte\"]"),
+      new Criterion(3, "Maximum of direct Neighbors", 1, Criterion.Type.INT, "1"));
     Criteria criteria =  new Criteria(cl);
     return criteria;
   }
