@@ -97,6 +97,7 @@ public class SeatfinderDatabaseTest {
   void mapSerializes() {
     try {
       Mapper m = mapperFillMap("map.json");
+      System.out.println(m);
     }
     catch (IOException e) {
       assert(false);
