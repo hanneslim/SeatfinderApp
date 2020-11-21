@@ -18,4 +18,12 @@ public class Resource {
     this.shape = shape;
     this.reservable = true;
   }
+
+  public Resource(int id, String name, Coordinates coordinates, Shape shape, Boolean reservable) {
+    this.id = id;
+    this.name = name;
+    this.coordinates = coordinates;
+    this.shape = shape;
+    this.reservable = reservable;
+  }
 }

@@ -14,7 +14,10 @@ public class Mapper {
   private String siteName;
 
   public Mapper(String loadFromFile) {
-    mapFile = loadFromFile= "site.json";
+    if (loadFromFile.isEmpty())
+      mapFile =  "site.json";
+    else
+      mapFile = loadFromFile;
     spaces = new ArrayList<>();
     map = new Map();
     File f = new File(loadFromFile);
@@ -52,5 +55,11 @@ public class Mapper {
 
   public String getSiteName() {
     return siteName;
+  }
+
+  public void setSite(String name, ArrayList<Space> spaces, Map map ) {
+    this.siteName = name;
+    this.spaces = spaces;
+    this.map = map;
   }
 }
