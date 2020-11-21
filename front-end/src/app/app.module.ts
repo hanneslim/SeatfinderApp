@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PreferencesComponent } from './preferences/preferences.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule} from '@angular/material/slider';
+import { SuggestionsComponent } from './suggestions/suggestions.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PreferencesComponent
+    PreferencesComponent,
+    SuggestionsComponent
   ],
   imports: [
     HttpClientModule,
@@ -23,13 +25,13 @@ import {MatSliderModule} from '@angular/material/slider';
     MatDatepickerModule,
     MatNativeDateModule,
     BrowserAnimationsModule,
-    MatSliderModule 
+    MatSliderModule
   ],
   exports: [
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSliderModule 
+    MatSliderModule
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'de-DE'},MatDatepickerModule,
     MatNativeDateModule,

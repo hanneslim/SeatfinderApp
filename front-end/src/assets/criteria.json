@@ -1,0 +1,25 @@
+{
+  "criteria": [
+    {
+      "id": 1,
+      "name": "Möchtest du nahe an einer Heizung sitzen?",
+      "priority": 3,
+      "type": "BOOL",
+      "value": "true"
+    },
+    {
+      "id": 2,
+      "name": "Möchtest du bei einem bestimmten Team sitzen?",
+      "priority": 1,
+      "type": "LIST",
+      "value": "[\"Giraffe\", \"Elefant\", \"Schildkröte\"]"
+    },
+    {
+      "id": 3,
+      "name": "Ist dir die Anzahl der direkten Nachbarn wichtig?",
+      "priority": 1,
+      "type": "INT",
+      "value": "1"
+    }
+  ]
+}

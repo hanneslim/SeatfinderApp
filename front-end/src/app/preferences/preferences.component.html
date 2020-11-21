@@ -4,12 +4,12 @@
     <div>
         <mat-form-field>
             <mat-label>Heute</mat-label>
-            <input matInput [matDatepicker]="picker1" >
+            <input matInput [matDatepicker]="picker1">
             <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-            <mat-datepicker #picker1 >
-            </mat-datepicker>
-            
+            <mat-datepicker #picker1></mat-datepicker> 
         </mat-form-field>
+
+        
     </div>
 <!--
     <div>
@@ -21,13 +21,39 @@
     <div class="panel">
         <div>
             <details>
-                <summary>
-                <ul>
-                    <li class="text-preferences">Präferenzen wählen</li>
-                </ul>
-                </summary>
+                <summary> Präferenzen wählen </summary>
                 <div class="content">
-                    <pre *ngIf="code"> {{(result$|async)|json}} </pre> 
+                    <div *ngIf="code">
+
+                        <h4>Alle mit Prio1: </h4>
+                        <ul class="mein-ul">
+                            <li *ngFor="let criteria of prio1Data;">
+                                <span>{{criteria.name}}
+                                    <input type="checkbox" id="switch" />
+                                </span>
+                                
+                            </li>
+                        </ul>
+
+                        <h4>Alle mit Prio2:</h4>
+                        <ul>
+                            <div *ngFor="let criteria of prio2Data;">
+                                <span>{{criteria.name}}
+                                    <input type="checkbox" id="switch" />
+                                </span>
+                            </div>
+                        </ul>
+
+                        <h4>Alle mit Prio3:</h4>
+                        <ul>
+                             <li *ngFor="let criteria of prio3Data;">
+                                <span>{{criteria.name}}
+                                    <input type="checkbox" id="switch" />
+                                </span>
+                            </li>
+                        </ul>
+                        
+                    </div>
                 </div>
             </details>
         </div>
@@ -35,7 +61,7 @@
 
     <div class="buttons">
         <button mat-button>Meine Reservierungen</button>
-        <button mat-button>Weiter</button>
+        <button mat-button (click)="onClickNext()">Weiter</button>
     </div>
 </div>
 
