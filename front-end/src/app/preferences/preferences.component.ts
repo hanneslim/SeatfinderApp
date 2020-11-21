@@ -3,13 +3,6 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { Observable } from 'rxjs';
 import { PreferencesService } from '../service/preferences.service';
 import { Router } from '@angular/router';
-import {
-  FormBuilder,
-  FormGroup,
-  FormArray,
-  FormControl,
-  ValidatorFn
-} from '@angular/forms';
 
 @Component({
   selector: 'app-preferences',
@@ -40,6 +33,7 @@ export class PreferencesComponent implements OnInit {
   prio1Data: any[] = []; //Für Alle Json Elemente mit Prio 1
   prio2Data: any[] = []; //Für Alle Json Elemente mit Prio 2
   prio3Data: any[] = []; //Für Alle Json Elemente mit Prio 3
+  
   //Nachfolgend für die Uhrzeit
   /* 
   onChangeRange(rangeValue: any) {
@@ -110,7 +104,7 @@ export class PreferencesComponent implements OnInit {
   }
 
   onClickNext() {
-    console.log("Boing.")
+    console.log("Weiter clicked.")
     this.router.navigate(['/suggestions']);
   }
 

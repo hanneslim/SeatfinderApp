@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-suggestions',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuggestionsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onClickNext() {
+    console.log("Weiter clicked.")
+    this.router.navigate(['/suggestions']);
+  }
+
+  onClickBack() {
+    console.log("Zurück clicked.")
+    this.router.navigate(['/preferences']);
   }
 
 }

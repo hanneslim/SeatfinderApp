@@ -4,14 +4,9 @@ import { PreferencesComponent } from './preferences/preferences.component';
 import { SuggestionsComponent } from './suggestions/suggestions.component';
 
 const routes: Routes = [
-  {
-    path: 'preferences',
-    component: PreferencesComponent
-  },
-  {
-    path: 'suggestions',
-    component: SuggestionsComponent
-  }
+  { path: 'preferences', component: PreferencesComponent },
+  { path: 'suggestions', component: SuggestionsComponent },
+  { path: '', redirectTo: '/preferences', pathMatch: 'full'},
 ];
 
 @NgModule({
@@ -19,3 +14,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
