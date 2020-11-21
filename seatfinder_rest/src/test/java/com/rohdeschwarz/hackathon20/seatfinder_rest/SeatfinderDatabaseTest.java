@@ -2,17 +2,16 @@ package com.rohdeschwarz.hackathon20.seatfinder_rest;
 
 import com.rohdeschwarz.hackathon20.seatfinder_rest.database.Mapper;
 import com.rohdeschwarz.hackathon20.seatfinder_rest.database.Scheduler;
+import com.rohdeschwarz.hackathon20.seatfinder_rest.handler.UserHandler;
 import com.rohdeschwarz.hackathon20.seatfinder_rest.model.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
 
 import java.io.File;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 @SpringBootTest
 public class SeatfinderDatabaseTest {
@@ -106,7 +105,7 @@ public class SeatfinderDatabaseTest {
   }
 
 
-  private Mapper mapperFillMap( String filename) throws IOException {
+  private Mapper mapperFillMap( String filename) {
     Mapper m = new Mapper(filename);
     ArrayList<Space> spaces = new ArrayList<>();
     Shape buero = new Shape("<rect id=\"svg_1\" height=\"385\" width=\"441\" y=\"40.45313\" x=\"56.5\"/>");
@@ -144,5 +143,23 @@ public class SeatfinderDatabaseTest {
     catch (IOException e) {
       assert(false);
     }
+  }
+
+  @Test
+  void storeAUser()
+  {
+    UserHandler uh = new UserHandler();
+    User u = uh.createNewUser( "Hans", "Team Marienkäfer" );
+    assert ( u.id != 0 );
+  }
+
+  @Test
+  void storeSomeUsers()
+  {
+    UserHandler uh = new UserHandler();
+    User u1 = uh.createNewUser( "Hans", "Team Marienkäfer" );
+    User u2 = uh.createNewUser( "Karl", "Team Marienkäfer" );
+    User u3 = uh.createNewUser( "Peter", "Hasengruppe" );
+    assert ( uh.getUserById( u2.id ).name.equals( "Karl" ) );
   }
 }
